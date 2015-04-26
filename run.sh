@@ -1,2 +1,2 @@
 #!/bin/bash
-th result.lua
+/scratch/ww933/share/torch/install/bin/th result.lua

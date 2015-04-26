@@ -54,7 +54,10 @@ function query_sentences()
                 break -- end loop
             elseif line.code == "vocab" then
                 print("Out-of-vocabulary character encountered!")
-		os.exit()
+		goto continue
+	    elseif line.code == "init" then
+	    	print("Start with a number")
+		goto continue
 	    end
 	end
 
@@ -90,6 +93,8 @@ function query_sentences()
 	-- write and flush prediction result
 	io.write("Out: " .. sentence .. "\n")
 	io.flush()
+	
+	::continue::
     end
 end
 
