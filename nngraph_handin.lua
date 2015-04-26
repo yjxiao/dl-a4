@@ -1,6 +1,6 @@
 require 'nngraph'
 
--- wrapper node for inputs
+-- wrapper nodes for inputs
 i1 = nn.Identity()()
 i2 = nn.Identity()()
 i3 = nn.Identity()()

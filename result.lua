@@ -12,8 +12,8 @@ stringx = require('pl.stringx')
 
 -- define parameters, must conform with the network setting
 params = {}
-params.layers = 2
-params.rnn_size = 200
+params.layers = 3
+params.rnn_size = 500
 
 -- initialize model states to zero
 function setup()
