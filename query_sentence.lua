@@ -15,7 +15,7 @@ params = {}
 params.layers = 2
 params.rnn_size = 200
 
--- initialize model states to zero
+-- initialize model states to zeros
 function setup()
     model.s = {}
     for j = 0, 1 do
@@ -26,6 +26,7 @@ function setup()
     end
 end
 
+-- modified from a4_communication_loop.lua
 function readline()
     local line = io.read("*line")
     if line == nil then error({code="EOF"}) end
@@ -40,8 +41,7 @@ end
 -- main function handling I/O
 function query_sentences()
 
-    -- handshake
-    io.write("OK GO\n")
+    -- indicator
     io.write("Query: len word1 word2 etc\n")    
     io.flush()
 
@@ -61,12 +61,14 @@ function query_sentences()
 	    end
 	end
 
+	-- initialize final output string by joining the input words
 	sentence = stringx.join(" ", {select(2, unpack(line))})
-	--
+
+	-- count number of words in the input string
 	local n = #line
 	local l = tonumber(line[1])
 	
-	-- first n-1 predictions with known ground truth
+	-- forward first n-1 predictions with known ground truth
 	for i = 2, n-1 do
 	    local x = torch.Tensor(1):fill(vocab_map[line[i]]):cuda()
 	    local y = torch.Tensor(1):fill(vocab_map[line[i+1]]):cuda()
@@ -84,9 +86,14 @@ function query_sentences()
 	for i = 1, l do
 	    local pred
 	    _, model.s[1], pred = unpack(model.core_network:forward({x, y, model.s[0]}))
+
+	    -- adopt word with highest predicted probability
 	    local _, x = pred:max(2)
+	    
+	    -- add word to the end of the output string
 	    sentence = sentence .. " " .. inv_map[x[1][1]]
 	    
+            -- copy s1 to s0, which acts as prev_s input for the next iteration
 	    g_replace_table(model.s[0], model.s[1])
 	end
 

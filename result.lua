@@ -15,7 +15,7 @@ params = {}
 params.layers = 3
 params.rnn_size = 500
 
--- initialize model states to zero
+-- initialize model states to zeros
 function setup()
     model.s = {}
     for j = 0, 1 do
@@ -26,6 +26,7 @@ function setup()
     end
 end
 
+-- modified from a4_communication_loop.lua
 function readline()
     local line = io.read("*line")
     if line == nil then error({code="EOF"}) end
