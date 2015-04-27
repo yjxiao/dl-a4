@@ -106,7 +106,7 @@ function query_sentences()
 end
 
 print("Loading model ...")
-model_file = "model/rnn_1h_word.net"
+model_file = "model/word_core_1h.net"
 model = torch.load(model_file)
 map_file = "model/word_vocab_map.tb"
 vocab_map = torch.load(map_file)

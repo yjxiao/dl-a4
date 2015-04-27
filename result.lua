@@ -30,7 +30,7 @@ end
 function readline()
     local line = io.read("*line")
     if line == nil then error({code="EOF"}) end
-    line = line:gsub("\n", "")
+    line = line:gsub("\n", ""):lower()
     if vocab_map[line] == nil then error({code="vocab", word = line[i]}) end
     return line
 end
