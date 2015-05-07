@@ -1,0 +1,12 @@
+Generated char level test data? (would be a grave error)
+
+cd yx887; git log --pretty=format:"%an, %ad : %s" -4
+yjxiao, Mon Apr 27 17:43:38 2015 -0400 : final commit
+yjxiao, Sun Apr 26 12:13:24 2015 -0400 : added comments
+yjxiao, Sun Apr 26 12:01:37 2015 -0400 : use locally installed th; query sentence now continue instead of exit when invalid input encountered
+yjxiao, Sat Apr 25 22:19:38 2015 -0400 : finializing codes
+
+cd yx887; git log --pretty=format:"%ad" -1
+Mon Apr 27 17:43:38 2015 -0400
+
+Last commit is in time

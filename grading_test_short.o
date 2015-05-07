@@ -1,0 +1,17 @@
+yx887
+/scratch/ts2387/a4/yx887
+tput: No value for $TERM and no -T specified
+Flushing proc output until OK GO received
+ --  [0mLoading model ...[0m
+ --  OK GO
+Start test loop
+0	Perplexity: 63011318349967733060003692544.000000	avgnll: 11.841627	fails: 0
+1000	Perplexity: 675.427118	avgnll: 1.163455	fails: 0
+2000	Perplexity: 549.624616	avgnll: 1.126649	fails: 0
+3000	Perplexity: 682.324640	avgnll: 1.165269	fails: 0
+4000	Perplexity: 602.404058	avgnll: 1.143023	fails: 0
+5000	Perplexity: 683.880317	avgnll: 1.165676	fails: 0
+6000	Perplexity: 668.338576	avgnll: 1.161571	fails: 0
+7000	Perplexity: 631.116153	avgnll: 1.151337	fails: 0
+8000	Perplexity: 536.738406	avgnll: 1.122413	fails: 0
+9000	Perplexity: 487.579934	avgnll: 1.105260	fails: 0

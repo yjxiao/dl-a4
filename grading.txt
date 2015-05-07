@@ -1,0 +1,30 @@
+# General comments and issues with running your submission
+Worked
+
+# Your test set score
+442000  Perplexity: 330.977115  avgnll: 1.036080        fails: 0
+
+# Your answer to the questions (no comment means correct)
++ Q1
++ Q2
++ Q3
++ Q4
++ Q5
++ Q6
++ Q7
+
+# Comments on your code
+Nice test loop, Tensor(1) is good.
+You should disable dropout during eval! Can make quite a difference
+
+# Comments on your write-up
+Nice overview of experiments.
+Good attempts in using a large network with sensible dropout and init_weight modifications.
+
+# Grades
++ Test set performance (out of 25): 23
++ Questions            (out of 25): 25
++ Code                 (out of 25): 25
++ Write-up and effort  (out of 25): 25
++ Lateness deduction              :
++ TOTAL (out of 100):             : 98
